@@ -26,6 +26,20 @@ namespace gvPagination {
         }
 
         /// <summary>
+        /// 計算頁數
+        /// </summary>
+        /// <param name="dt">The dt.</param>
+        private void CalculateTotalPages(DataTable dt) {
+
+            int rowCount = dt.Rows.Count;
+            _totalPage = rowCount / _pageSize;
+
+            //不足一個分頁行數的還是算一頁
+            if (rowCount % _pageSize > 0)
+                _totalPage += 1;
+        }
+
+        /// <summary>
         /// Gets the current records.
         /// </summary>
         /// <param name="page">The page.</param>
@@ -56,19 +70,27 @@ namespace gvPagination {
         }
 
         private void btnFirstPage_Click(object sender, EventArgs e) {
-
+            _currentPageIndex = 1;
+            dataGridView1.DataSource = getCurrentRecords(_currentPageIndex);
         }
 
         private void btnPreviousPage_Click(object sender, EventArgs e) {
-
+            if (this._currentPageIndex > 1) {
+                _currentPageIndex--;
+                dataGridView1.DataSource = getCurrentRecords(_currentPageIndex);
+            }
         }
 
         private void btnNextPage_Click(object sender, EventArgs e) {
-
+            if (_currentPageIndex < _totalPage) {
+                _currentPageIndex++;
+                dataGridView1.DataSource = getCurrentRecords(_currentPageIndex);
+            }
         }
 
         private void btnLastPage_Click(object sender, EventArgs e) {
-
+            _currentPageIndex = _totalPage;
+            dataGridView1.DataSource = getCurrentRecords(_currentPageIndex);
         }
 
         private void btnSet_Click(object sender, EventArgs e) {
