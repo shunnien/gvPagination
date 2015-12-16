@@ -13,5 +13,25 @@ namespace gvPagination {
         public Form1() {
             InitializeComponent();
         }
+
+        private void btnFirstPage_Click(object sender, EventArgs e) {
+
+        }
+
+        private void btnPreviousPage_Click(object sender, EventArgs e) {
+
+        }
+
+        private void btnNextPage_Click(object sender, EventArgs e) {
+
+        }
+
+        private void btnLastPage_Click(object sender, EventArgs e) {
+
+        }
+
+        private void btnSet_Click(object sender, EventArgs e) {
+
+        }
     }
 }

@@ -29,10 +29,10 @@
             this.btnNextPage = new System.Windows.Forms.Button();
             this.btnLastPage = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lbTotalPage = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.nudPageSize = new System.Windows.Forms.NumericUpDown();
             this.btnSet = new System.Windows.Forms.Button();
+            this.nudPageSize = new System.Windows.Forms.NumericUpDown();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lbTotalPage = new System.Windows.Forms.Label();
             this.lbCurrentPage = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -58,6 +58,7 @@
             this.btnFirstPage.TabIndex = 1;
             this.btnFirstPage.Text = "第一頁";
             this.btnFirstPage.UseVisualStyleBackColor = true;
+            this.btnFirstPage.Click += new System.EventHandler(this.btnFirstPage_Click);
             // 
             // btnPreviousPage
             // 
@@ -68,6 +69,7 @@
             this.btnPreviousPage.TabIndex = 2;
             this.btnPreviousPage.Text = "<<上一頁";
             this.btnPreviousPage.UseVisualStyleBackColor = true;
+            this.btnPreviousPage.Click += new System.EventHandler(this.btnPreviousPage_Click);
             // 
             // btnNextPage
             // 
@@ -78,6 +80,7 @@
             this.btnNextPage.TabIndex = 3;
             this.btnNextPage.Text = "下一頁>>";
             this.btnNextPage.UseVisualStyleBackColor = true;
+            this.btnNextPage.Click += new System.EventHandler(this.btnNextPage_Click);
             // 
             // btnLastPage
             // 
@@ -88,6 +91,7 @@
             this.btnLastPage.TabIndex = 4;
             this.btnLastPage.Text = "最後一頁";
             this.btnLastPage.UseVisualStyleBackColor = true;
+            this.btnLastPage.Click += new System.EventHandler(this.btnLastPage_Click);
             // 
             // groupBox1
             // 
@@ -103,24 +107,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "設定分頁";
             // 
-            // lbTotalPage
+            // btnSet
             // 
-            this.lbTotalPage.AutoSize = true;
-            this.lbTotalPage.Font = new System.Drawing.Font("Microsoft JhengHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lbTotalPage.Location = new System.Drawing.Point(415, 43);
-            this.lbTotalPage.Name = "lbTotalPage";
-            this.lbTotalPage.Size = new System.Drawing.Size(57, 20);
-            this.lbTotalPage.TabIndex = 11;
-            this.lbTotalPage.Text = "共    頁";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 36);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 20);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "每頁";
+            this.btnSet.Location = new System.Drawing.Point(192, 34);
+            this.btnSet.Name = "btnSet";
+            this.btnSet.Size = new System.Drawing.Size(202, 28);
+            this.btnSet.TabIndex = 14;
+            this.btnSet.Text = "設定";
+            this.btnSet.UseVisualStyleBackColor = true;
+            this.btnSet.Click += new System.EventHandler(this.btnSet_Click);
             // 
             // nudPageSize
             // 
@@ -149,14 +144,24 @@
             0,
             0});
             // 
-            // btnSet
+            // label1
             // 
-            this.btnSet.Location = new System.Drawing.Point(192, 34);
-            this.btnSet.Name = "btnSet";
-            this.btnSet.Size = new System.Drawing.Size(202, 28);
-            this.btnSet.TabIndex = 14;
-            this.btnSet.Text = "設定";
-            this.btnSet.UseVisualStyleBackColor = true;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 36);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(41, 20);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "每頁";
+            // 
+            // lbTotalPage
+            // 
+            this.lbTotalPage.AutoSize = true;
+            this.lbTotalPage.Font = new System.Drawing.Font("Microsoft JhengHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lbTotalPage.Location = new System.Drawing.Point(415, 43);
+            this.lbTotalPage.Name = "lbTotalPage";
+            this.lbTotalPage.Size = new System.Drawing.Size(57, 20);
+            this.lbTotalPage.TabIndex = 11;
+            this.lbTotalPage.Text = "共    頁";
             // 
             // lbCurrentPage
             // 
