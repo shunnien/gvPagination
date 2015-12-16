@@ -31,8 +31,11 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lbTotalPage = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.nudPageSize = new System.Windows.Forms.NumericUpDown();
+            this.btnSet = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPageSize)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -86,6 +89,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnSet);
+            this.groupBox1.Controls.Add(this.nudPageSize);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.lbTotalPage);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft JhengHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -100,7 +105,7 @@
             // 
             this.lbTotalPage.AutoSize = true;
             this.lbTotalPage.Font = new System.Drawing.Font("Microsoft JhengHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lbTotalPage.Location = new System.Drawing.Point(427, 34);
+            this.lbTotalPage.Location = new System.Drawing.Point(415, 43);
             this.lbTotalPage.Name = "lbTotalPage";
             this.lbTotalPage.Size = new System.Drawing.Size(57, 20);
             this.lbTotalPage.TabIndex = 11;
@@ -109,11 +114,47 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 34);
+            this.label1.Location = new System.Drawing.Point(6, 36);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(41, 20);
             this.label1.TabIndex = 12;
             this.label1.Text = "每頁";
+            // 
+            // nudPageSize
+            // 
+            this.nudPageSize.Increment = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            this.nudPageSize.Location = new System.Drawing.Point(53, 34);
+            this.nudPageSize.Maximum = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
+            this.nudPageSize.Minimum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.nudPageSize.Name = "nudPageSize";
+            this.nudPageSize.Size = new System.Drawing.Size(133, 29);
+            this.nudPageSize.TabIndex = 13;
+            this.nudPageSize.Value = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            // 
+            // btnSet
+            // 
+            this.btnSet.Location = new System.Drawing.Point(192, 34);
+            this.btnSet.Name = "btnSet";
+            this.btnSet.Size = new System.Drawing.Size(202, 28);
+            this.btnSet.TabIndex = 14;
+            this.btnSet.Text = "設定";
+            this.btnSet.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -131,6 +172,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPageSize)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -145,6 +187,8 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbTotalPage;
+        private System.Windows.Forms.Button btnSet;
+        private System.Windows.Forms.NumericUpDown nudPageSize;
     }
 }
 
