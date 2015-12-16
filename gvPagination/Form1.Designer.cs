@@ -41,6 +41,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
@@ -139,7 +140,7 @@
             this.nudPageSize.Size = new System.Drawing.Size(133, 29);
             this.nudPageSize.TabIndex = 13;
             this.nudPageSize.Value = new decimal(new int[] {
-            20,
+            5,
             0,
             0,
             0});
