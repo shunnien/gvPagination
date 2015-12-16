@@ -33,6 +33,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.nudPageSize = new System.Windows.Forms.NumericUpDown();
             this.btnSet = new System.Windows.Forms.Button();
+            this.lbCurrentPage = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPageSize)).BeginInit();
@@ -156,11 +157,23 @@
             this.btnSet.Text = "設定";
             this.btnSet.UseVisualStyleBackColor = true;
             // 
+            // lbCurrentPage
+            // 
+            this.lbCurrentPage.AutoSize = true;
+            this.lbCurrentPage.Font = new System.Drawing.Font("Microsoft JhengHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lbCurrentPage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.lbCurrentPage.Location = new System.Drawing.Point(229, 349);
+            this.lbCurrentPage.Name = "lbCurrentPage";
+            this.lbCurrentPage.Size = new System.Drawing.Size(58, 20);
+            this.lbCurrentPage.TabIndex = 10;
+            this.lbCurrentPage.Text = "第 1 頁";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(514, 476);
+            this.Controls.Add(this.lbCurrentPage);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnLastPage);
             this.Controls.Add(this.btnNextPage);
@@ -174,6 +187,7 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPageSize)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -189,6 +203,7 @@
         private System.Windows.Forms.Label lbTotalPage;
         private System.Windows.Forms.Button btnSet;
         private System.Windows.Forms.NumericUpDown nudPageSize;
+        private System.Windows.Forms.Label lbCurrentPage;
     }
 }
 
