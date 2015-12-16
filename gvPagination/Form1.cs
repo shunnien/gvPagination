@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,36 @@ namespace gvPagination {
 
         public Form1() {
             InitializeComponent();
+        }
+
+        /// <summary>
+        /// Gets the current records.
+        /// </summary>
+        /// <param name="page">The page.</param>
+        /// <returns></returns>
+        private DataTable getCurrentRecords(int page) {
+            DataTable dt = new DataTable();
+            using (SqlConnection con = new SqlConnection(_connecString)) {
+                SqlCommand cmd = new SqlCommand();
+                if (page == 1) {
+                    cmd = new SqlCommand("Select TOP " + _pageSize +
+                    " [OrderID],[CustomerID],[ShipVia],[Freight] FROM [Northwind].[dbo].[Orders] ORDER BY [OrderID]", con);
+                }
+                else {
+                    //利用 SQL 語法來切換資料
+                    int PreviousPageOffSet = (page - 1) * _pageSize;
+
+                    cmd = new SqlCommand("Select TOP " + _pageSize + " [OrderID],[CustomerID],[ShipVia],[Freight] " +
+                        "FROM [Northwind].[dbo].[Orders] WHERE [OrderID] " +
+                        "NOT IN " +
+                        "(Select TOP " + PreviousPageOffSet + " [OrderID] from [Northwind].[dbo].[Orders] ORDER BY [OrderID] ) "
+                        , con);
+                }
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                lbCurrentPage.Text = "第 " + _currentPageIndex + " 頁";
+            }
+            return dt;
         }
 
         private void btnFirstPage_Click(object sender, EventArgs e) {
