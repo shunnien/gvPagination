@@ -28,7 +28,11 @@
             this.btnPreviousPage = new System.Windows.Forms.Button();
             this.btnNextPage = new System.Windows.Forms.Button();
             this.btnLastPage = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lbTotalPage = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -80,11 +84,43 @@
             this.btnLastPage.Text = "最後一頁";
             this.btnLastPage.UseVisualStyleBackColor = true;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.lbTotalPage);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft JhengHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.groupBox1.Location = new System.Drawing.Point(12, 385);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(490, 79);
+            this.groupBox1.TabIndex = 5;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "設定分頁";
+            // 
+            // lbTotalPage
+            // 
+            this.lbTotalPage.AutoSize = true;
+            this.lbTotalPage.Font = new System.Drawing.Font("Microsoft JhengHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lbTotalPage.Location = new System.Drawing.Point(427, 34);
+            this.lbTotalPage.Name = "lbTotalPage";
+            this.lbTotalPage.Size = new System.Drawing.Size(57, 20);
+            this.lbTotalPage.TabIndex = 11;
+            this.lbTotalPage.Text = "共    頁";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 34);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(41, 20);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "每頁";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(514, 476);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnLastPage);
             this.Controls.Add(this.btnNextPage);
             this.Controls.Add(this.btnPreviousPage);
@@ -93,6 +129,8 @@
             this.Name = "Form1";
             this.Text = "Pagination";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -104,6 +142,9 @@
         private System.Windows.Forms.Button btnPreviousPage;
         private System.Windows.Forms.Button btnNextPage;
         private System.Windows.Forms.Button btnLastPage;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbTotalPage;
     }
 }
 
