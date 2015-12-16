@@ -69,6 +69,23 @@ namespace gvPagination {
             return dt;
         }
 
+        /// <summary>
+        /// Gets the data.
+        /// </summary>
+        /// <returns></returns>
+        private DataTable getData() {
+
+            using (SqlConnection con = new SqlConnection(_connecString)) {
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand("SELECT [OrderID],[CustomerID],[ShipVia],[Freight] FROM [Northwind].[dbo].[Orders] ORDER BY [OrderID]", con)) {
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    return dt;
+                }
+            }
+        }
+
         private void btnFirstPage_Click(object sender, EventArgs e) {
             _currentPageIndex = 1;
             dataGridView1.DataSource = getCurrentRecords(_currentPageIndex);
@@ -94,7 +111,14 @@ namespace gvPagination {
         }
 
         private void btnSet_Click(object sender, EventArgs e) {
-
+            if (_pageSize != Convert.ToInt32(nudPageSize.Value)) {
+                _currentPageIndex = 1;
+                _pageSize = Convert.ToInt32(nudPageSize.Value);
+                CalculateTotalPages(getData());
+                lbTotalPage.Text = "共 " + _totalPage + " 頁";
+                lbCurrentPage.Text = "第 " + _currentPageIndex + " 頁";
+                dataGridView1.DataSource = getCurrentRecords(_currentPageIndex);
+            }
         }
     }
 }
