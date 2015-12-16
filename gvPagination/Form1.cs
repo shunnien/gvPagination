@@ -23,6 +23,7 @@ namespace gvPagination {
 
         public Form1() {
             InitializeComponent();
+            btnSet_Click(new Button(), new EventArgs());
         }
 
         /// <summary>
